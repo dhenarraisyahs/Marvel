@@ -1,0 +1,31 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="id.sch.smktelkom_mlg.privateassignment.xirpl110.marvels.DetailFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ImageView
+        android:id="@+id/imageCharDetail"
+        android:layout_width="150dp"
+        android:layout_height="225dp"
+        android:layout_gravity="center" />
+
+    <TextView
+        android:id="@+id/Nama"
+        style="@style/TextAppearance.AppCompat.Title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nama"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/Deskripsi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="deskripsi"
+        android:textAlignment="center" />
+
+</LinearLayout>
