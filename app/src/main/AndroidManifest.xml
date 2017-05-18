@@ -25,6 +25,14 @@
         <activity
             android:name=".CharDetailActivity"
             android:label="@string/title_activity_char_detail"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ComsDetActivity"
+            android:label="@string/title_activity_coms_det"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".FavActivity"
+            android:label="@string/title_activity_fav"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

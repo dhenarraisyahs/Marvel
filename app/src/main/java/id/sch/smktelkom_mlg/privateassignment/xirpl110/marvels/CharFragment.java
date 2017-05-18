@@ -11,7 +11,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
+import com.android.volley.TimeoutError;
 import com.android.volley.VolleyError;
 
 import java.util.ArrayList;
@@ -59,6 +61,17 @@ public class CharFragment extends Fragment implements CharAdapter.charListener {
             @Override
             public void onErrorResponse(VolleyError error) {
                 Log.e("CHAR FRAGMENT", "Error : ", error);
+                if (error.networkResponse == null) {
+                    if (error.getClass().equals(TimeoutError.class)) {
+                        // Show timeout error message
+                        Toast.makeText(getContext(),
+                                "Oops. Timeout error!",
+                                Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(getActivity(), MainActivity.class);
+                        intent.putExtra("error", "Timeout");
+                        startActivity(intent);
+                    }
+                }
             }
         });
         VolleySingleton.getInstance(getActivity().getApplicationContext()).addToRequestQueue(req);

@@ -18,6 +18,7 @@ import java.util.List;
 import id.sch.smktelkom_mlg.privateassignment.xirpl110.marvels.R;
 import id.sch.smktelkom_mlg.privateassignment.xirpl110.marvels.model.Comic;
 import id.sch.smktelkom_mlg.privateassignment.xirpl110.marvels.model.Price;
+import io.realm.Realm;
 
 /**
  * Created by dhenarra on 14/05/2017.
@@ -27,10 +28,14 @@ public class ComAdapter extends RecyclerView.Adapter<ComAdapter.ViewHolder> {
 
     public List<Comic> coms;
     Context context;
+    IcomAdapter icomAdapter;
+    private Realm realm;
 
     public ComAdapter(List<Comic> coms, Context context, Fragment fragment) {
         this.coms = coms;
         this.context = context;
+        this.icomAdapter = (IcomAdapter) fragment;
+        realm = Realm.getDefaultInstance();
     }
 
     @Override
@@ -66,6 +71,12 @@ public class ComAdapter extends RecyclerView.Adapter<ComAdapter.ViewHolder> {
             return coms.size();
         }
         return 0;
+    }
+
+    public interface IcomAdapter {
+        void detailCom(int pos);
+
+        void doSave(int pos, ImageButton fab);
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

@@ -32,7 +32,11 @@ public class CharAdapter extends RecyclerView.Adapter<CharAdapter.ViewHolder> {
     public CharAdapter(List<Char> chars, Context context, Fragment fragment) {
         this.chars = chars;
         this.context = context;
-        charListener = (charListener) fragment;
+        if (fragment != null) {
+            charListener = (charListener) fragment;
+        } else {
+            charListener = (charListener) fragment;
+        }
     }
 
     @Override
