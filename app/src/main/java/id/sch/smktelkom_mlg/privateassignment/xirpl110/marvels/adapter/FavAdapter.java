@@ -18,11 +18,10 @@ import id.sch.smktelkom_mlg.privateassignment.xirpl110.marvels.R;
 import id.sch.smktelkom_mlg.privateassignment.xirpl110.marvels.model.Fav;
 
 /**
- * Created by dhenarra on 18/05/2017.
+ * Created by dhenarra on 13/06/2017.
  */
 
 public class FavAdapter extends RecyclerView.Adapter<FavAdapter.ViewHolder> {
-
     public List<Fav> favs;
     Context context;
     IFavAdapter iFavAdapter;

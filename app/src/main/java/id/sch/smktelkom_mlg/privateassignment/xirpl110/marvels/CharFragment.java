@@ -1,6 +1,7 @@
 package id.sch.smktelkom_mlg.privateassignment.xirpl110.marvels;
 
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -40,6 +41,7 @@ public class CharFragment extends Fragment implements CharAdapter.charListener {
         // Required empty public constructor
     }
 
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,7 +49,9 @@ public class CharFragment extends Fragment implements CharAdapter.charListener {
     }
 
     private void fillData() {
-
+        final ProgressDialog progressDialog = new ProgressDialog(getContext());
+        progressDialog.setMessage("Loading data...");
+        progressDialog.show();
         String url = "https://gateway.marvel.com:443/v1/public/characters?ts=1&apikey=f4dbb78409bc6ed6f31319830b30a4d5&hash=1b4a1c0351f6be2a613dd55c4246f3d9";
         GsonGetRequest<Response> req = new GsonGetRequest<Response>(url, Response.class, null, new com.android.volley.Response.Listener<Response>() {
             @Override
@@ -56,6 +60,7 @@ public class CharFragment extends Fragment implements CharAdapter.charListener {
                     charList.addAll(response.data.results);
                 }
                 charAdapter.notifyDataSetChanged();
+                progressDialog.dismiss();
             }
         }, new com.android.volley.Response.ErrorListener() {
             @Override
@@ -72,6 +77,7 @@ public class CharFragment extends Fragment implements CharAdapter.charListener {
                         startActivity(intent);
                     }
                 }
+                progressDialog.dismiss();
             }
         });
         VolleySingleton.getInstance(getActivity().getApplicationContext()).addToRequestQueue(req);

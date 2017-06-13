@@ -20,11 +20,10 @@ import id.sch.smktelkom_mlg.privateassignment.xirpl110.marvels.R;
 import id.sch.smktelkom_mlg.privateassignment.xirpl110.marvels.model.Char;
 
 /**
- * Created by dhenarra on 14/05/2017.
+ * Created by dhenarra on 13/06/2017.
  */
 
 public class CharAdapter extends RecyclerView.Adapter<CharAdapter.ViewHolder> {
-
     Context context;
     List<Char> chars = new ArrayList<>();
     charListener charListener;
@@ -35,7 +34,7 @@ public class CharAdapter extends RecyclerView.Adapter<CharAdapter.ViewHolder> {
         if (fragment != null) {
             charListener = (charListener) fragment;
         } else {
-            charListener = (charListener) fragment;
+            charListener = (charListener) context;
         }
     }
 

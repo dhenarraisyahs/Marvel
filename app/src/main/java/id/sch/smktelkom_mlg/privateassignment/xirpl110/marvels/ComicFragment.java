@@ -1,6 +1,7 @@
 package id.sch.smktelkom_mlg.privateassignment.xirpl110.marvels;
 
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
@@ -71,6 +72,7 @@ public class ComicFragment extends Fragment implements ComAdapter.IcomAdapter {
         bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
         return stream.toByteArray();
     }
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,6 +88,7 @@ public class ComicFragment extends Fragment implements ComAdapter.IcomAdapter {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_comic, container, false);
+        status = (TextView) view.findViewById(R.id.textStatusCom);
         RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.comicView);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);
@@ -102,6 +105,9 @@ public class ComicFragment extends Fragment implements ComAdapter.IcomAdapter {
     }
 
     private void fillData(int sort) {
+        final ProgressDialog progressDialog = new ProgressDialog(getContext());
+        progressDialog.setMessage("Loading data...");
+        progressDialog.show();
         String url = "https://gateway.marvel.com:443/v1/public/comics?apikey=f4dbb78409bc6ed6f31319830b30a4d5&ts=2&hash=441128b0d6f3fcfcd031f6895bb0723b";
         if (sort != 0) {
             url = "https://gateway.marvel.com:443/v1/public/characters/" + sort + "/comics?apikey=f4dbb78409bc6ed6f31319830b30a4d5&ts=2&hash=441128b0d6f3fcfcd031f6895bb0723b";
@@ -118,6 +124,7 @@ public class ComicFragment extends Fragment implements ComAdapter.IcomAdapter {
                     status.setVisibility(View.GONE);
                 }
                 adapter.notifyDataSetChanged();
+                progressDialog.dismiss();
             }
         }, new Response.ErrorListener() {
             @Override
@@ -134,6 +141,7 @@ public class ComicFragment extends Fragment implements ComAdapter.IcomAdapter {
                         startActivity(intent);
                     }
                 }
+                progressDialog.dismiss();
             }
         });
         VolleySingleton.getInstance(getActivity().getApplicationContext()).addToRequestQueue(request);

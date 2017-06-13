@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity
         Fragment fragment = null;
         if (id == R.id.nav_char) {
             fragment = new CharFragment();
-        } else if (id == R.id.nav_char) {
+        } else if (id == R.id.nav_comic) {
             fragment = new ComicFragment();
         } else if (id == R.id.nav_favorite) {
             fragment = new FavFragment();

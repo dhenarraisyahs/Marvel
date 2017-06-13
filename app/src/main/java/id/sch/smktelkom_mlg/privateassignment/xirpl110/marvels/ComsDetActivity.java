@@ -121,4 +121,3 @@ public class ComsDetActivity extends AppCompatActivity implements CharAdapter.ch
         startActivity(intent);
     }
 }
-

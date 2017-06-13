@@ -42,3 +42,4 @@
 
     <include layout="@layout/content_fav" />
 </android.support.design.widget.CoordinatorLayout>
+

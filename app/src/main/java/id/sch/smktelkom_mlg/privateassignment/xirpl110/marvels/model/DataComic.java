@@ -6,7 +6,6 @@ import java.util.List;
  * Created by dhenarra on 14/05/2017.
  */
 
-
 public class DataComic {
     public int count;
     public List<Comic> results;

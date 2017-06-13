@@ -7,6 +7,7 @@ import java.util.List;
  * Created by dhenarra on 14/05/2017.
  */
 
+
 public class Comic implements Serializable {
     public int id;
     public String title;
