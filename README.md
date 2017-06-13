@@ -27,5 +27,8 @@ bergambar dollar, maka kita akan diarahkan ke web Marvel dan dapat membeli comic
 -(belum ada)
 
 ### Screenshot
-![screenshot_1](https://s28.postimg.org/5yly10jct/Screenshot_2017-05-18-10-17-36.png)
-![screenshot_2](https://s23.postimg.org/5919vpi9n/Screenshot_2017-05-18-10-17-28.png)
+![screenshot_1](http://i.imgur.com/dEvEWTU.png)
+![screenshot_2](http://i.imgur.com/Uy5qnPr.png)
+![screenshot_3](http://i.imgur.com/R9JVPij.png)
+![screenshot_4](http://i.imgur.com/qAxq6SO.png)
+![screenshot_5](http://i.imgur.com/9w9yHvu.png)
