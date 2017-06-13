@@ -1,5 +1,5 @@
 # Marvel Comic
-[Link APK](https://drive.google.com/open?id=0B1LmBilQTTCAQTY3aTlxWWE0ZGM)
+[Link APK](https://drive.google.com/file/d/0B7xIYAbPNmFEdDlhbGpfSXdYVlE/view?usp=sharing)
 
 ### Identitas
 Nama : Dhenarra Erine Aisyahsari<br>
